@@ -6,50 +6,33 @@ namespace RomanNumerals
     {
         static void Main(string[] args)
         {
-            string romanNumber = "MDCCCLXXXVIII";
+            string romanNumber = "IV";
             Console.WriteLine(Program.ConversionResults(romanNumber));
         }
         static int ConvertLetter(char letter)
         {
             if (letter == 'I')
-            {
-                return 1;
-            }
+            { return 1; }
             else if (letter == 'V')
-            {
-                return 5;
-            }
+            { return 5; }
             else if (letter == 'X')
-            {
-                return 10;
-            }
+            { return 10; }
             else if (letter == 'L')
-            {
-                return 50;
-            }
+            { return 50; }
             else if (letter == 'C')
-            {
-                return 100;
-            }
+            { return 100; }
             else if (letter == 'D')
-            {
-                return 500;
-            }
+            { return 500; }
             else if (letter == 'M')
-            {
-                return 1000;
-            }
+            { return 1000; }
             return -1;
-
         }
         static int ConversionResults(string romanNum)
         {
             romanNum = romanNum.ToUpper();
             int result = 0;
             foreach (var letter in romanNum)
-            {
-                result += ConvertLetter(letter);
-            }
+            { result += ConvertLetter(letter); }
 
             if (romanNum.Contains("IV") || romanNum.Contains("IX"))
             {
@@ -64,8 +47,28 @@ namespace RomanNumerals
                 result = result - 200;
             }
             return result;
-
         }
+
+//Convert Numbers to Roman Numerals
+    //      static int ConvertNumber(int number)
+    //     {
+    //         if (number / 5)
+    //         { 
+    //             return "V"; 
+    //         }
+    //         else if (number % 10)
+    //         { 
+    //             return "X"; }
+    //         else if (number % 50)
+    //         { return "L"; }
+    //       else {return "I";}
+    // }
+    //     static int ConversionResults(int resultNumber){
+    //     { result=0;
+    //        ConvertNumber(resultNumber);
+
+    //         }
+    //     }
 
 
     }
